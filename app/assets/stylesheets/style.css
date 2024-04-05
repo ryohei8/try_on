@@ -1,0 +1,157 @@
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+.wrapper {
+  display: flex;
+}
+
+/* common */
+.hidden {
+  display: none;
+}
+
+.page-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4267B3;
+}
+/* common */
+
+/* side-menu */
+.side-menu {
+  background-color: #fff;
+  height: 100vh;
+  width: 160px;
+  padding: 28px 20px 0px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 8px 0px 7px -7px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-family: "Roboto", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #4267B3;
+  display: inline-block;
+  margin-bottom: 48px;
+}
+
+.menu-item {
+  color: #616771;
+  display: inline-block;
+  margin-bottom: 28px;
+}
+/* side-menu */
+
+/* header */
+.header {
+  width: calc(100vw - 160px);
+  padding: 24px 24px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 0;
+  box-shadow: 0px 5px 16px -10px rgba(0, 0, 0, 0.3);
+}
+
+.search-form {
+  color: #616771;
+}
+
+.user-name {
+  color: #616771;
+}
+/* header */
+
+/* main */
+.main {
+  background-color: #E9EBEE;
+  height: calc(100vh - 70px);
+  padding: 36px 28px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+
+
+
+.add-item {
+  width: 96px;
+  height: 32px;
+  text-align: center;
+  padding: 9px 0;
+  color: #fff;
+  background-color: #4267B3;
+  border-radius: 32px;
+  box-shadow: 0px 5px 16px -10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.list-wrapper {
+  width: 100%;
+  height: 600px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 0px 5px 16px -10px rgba(0, 0, 0, 0.3);
+  padding: 20px 20px;
+}
+
+.list-header {
+  display: flex;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #E9EBEE;
+}
+
+.list-title {
+  width: 25%;
+  color: #90949C;
+}
+
+.item-list {
+  display: flex;
+}
+
+.item {
+  width: 25%;
+  padding: 14px 0;
+  font-size: 12px;
+  color: #616771;
+}
+
+.action-btn {
+  display: flex;
+  width: 25%;
+}
+
+.action-btn div {
+  padding: 14px 0;
+}
+
+.edit {
+  margin-right: 20px;
+  color: #4267B3;
+}
+
+.delete {
+  color: #F05A62;
+}
+
+
+
+/* main */
+

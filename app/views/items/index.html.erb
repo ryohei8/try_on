@@ -1,36 +1,86 @@
-<h1>TryOn</h1>
-<%= form_with model: @item, url: items_path, id: "form", local: true do |f| %>
-  <div class="new-item">
-    <div>
-      商品名
-      <span class="">必須</span>
-    </div>
-    <%= f.text_field :item_name, class: "item-name", id: "item-name" %>
-    <div>
-      サイズ
-      <span class="">必須</span>
-    </div>
-    <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"item-size"}) %>
-    <div>
-      価格
-      <span class="">必須</span>
-    </div>
-    <%= f.text_field :price, class: "price", id: "price" %>
-    <div>
-      在庫数
-      <span class="">必須</span>
-    </div>
-    <%= f.text_field :number_of_inventory, class: "inventory", id: "inventory" %>
-    <div>
-      <%= f.submit "商品を追加する", class: "add-btn", id: "add-btn" %>
+<div class="wrapper">
+  <%# side-menu %>
+  <div class="side-menu">
+    <h1><%= link_to 'Try On', root_path, class: "logo" %></h1>
+    <div class="menu-list">
+      <div><%= link_to '在庫一覧', root_path, class: "menu-item" %></div>
+      <div><%= link_to '管理者', root_path, class: "menu-item" %></div>
     </div>
   </div>
-<% end %>
-<%# To show item %>
-<% @items.each do |item| %>
-  <%= item.item_name %>
-  <%= item.size.name %>
-  <%= item.price %>
-  <%= item.number_of_inventory %>
-<% end %>
-<%# To show item %>
+  <%# side-menu %>
+
+  <div class="right-wrapper">
+    <%# header %>
+    <div class="header">
+      <div class="search-form">検索窓</div>
+      <div class="user-name">試着 太郎</div>
+    </div>
+    <%# header %>
+
+    <div class="main">
+      <div class="main-header">
+        <div class="page-title">在庫一覧</div>
+        <div class="add-item-btn">
+          <%= link_to root_path do %>
+            <div class="add-item">商品を追加</div>
+          <% end %>
+        </div>
+      </div>
+      <div class="list-wrapper">
+        <%# inventory list %>
+        <div class="inventory-list">
+          <div class="list-header">
+            <div class="list-title">商品名</div>
+            <div class="list-title">サイズ</div>
+            <div class="list-title">価格</div>
+            <div class="list-title">在庫数</div>
+            <div class="list-title">編集/削除</div>
+          </div>
+            <% @items.each do |item| %>
+              <div class="item-list">
+                <div class="item"><%= item.item_name %></div>
+                <div class="item"><%= item.size.name %></div>
+                <div class="item"><%= item.price %></div>
+                <div class="item"><%= item.number_of_inventory %></div>
+                <div class="action-btn">
+                  <div class="edit">編集</div>
+                  <div class="delete">削除</div>
+                </div>
+              </div>
+            <% end %>
+      </div>
+        <%# inventory list %>
+    </div>
+
+      <%# To add item %>
+      <%= form_with model: @item, url: items_path, id: "form", class: "hidden", local: true do |f| %>
+        <div class="new-item">
+          <div>
+            商品名
+            <span class="">必須</span>
+          </div>
+          <%= f.text_field :item_name, class: "item-name", id: "item-name" %>
+          <div>
+            サイズ
+            <span class="">必須</span>
+          </div>
+          <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"item-size"}) %>
+          <div>
+            価格
+            <span class="">必須</span>
+          </div>
+          <%= f.text_field :price, class: "price", id: "price" %>
+          <div>
+            在庫数
+            <span class="">必須</span>
+          </div>
+          <%= f.text_field :number_of_inventory, class: "inventory", id: "inventory" %>
+          <div>
+            <%= f.submit "商品を追加する", class: "add-btn", id: "add-btn" %>
+          </div>
+        </div>
+      <% end %>
+      <%# To add item %>
+    </div>
+  </div>
+</div>
