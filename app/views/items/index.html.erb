@@ -10,22 +10,49 @@
   <%# side-menu %>
 
   <div class="right-wrapper">
-    <%# header %>
-    <div class="header">
-      <div class="search-form">検索窓</div>
-      <div class="user-name">試着 太郎</div>
-    </div>
-    <%# header %>
+
+    <%# <div class="user-name">試着 太郎</div> %>
 
     <div class="main">
       <div class="main-header">
         <div class="page-title">在庫一覧</div>
-        <div class="add-item-btn">
-          <%= link_to root_path do %>
-            <div class="add-item">商品を追加</div>
+        <%# To add item %>
+
+          <%= form_with model: @item, url: items_path, id: "form", local: true do |f| %>
+            <div class="form-content">
+              <div class="form-item">
+                <div class="form-title">
+                  商品名
+                </div>
+                <%= f.text_field :item_name, class: "text-field", id: "item-name" %>
+              </div>
+              <div class="form-item">
+                <div class="form-title">
+                  価格
+                </div>
+                <%= f.text_field :price, class: "text-field", id: "price" %>
+              </div>
+              <div class="form-item">
+                <div class="form-title">
+                  サイズ
+                </div>
+                <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"item-size"}) %>
+              </div>
+              <div class="form-item">
+                <div class="form-title">
+                  在庫数
+                </div>
+                <%= f.text_field :number_of_inventory, class: "text-field inventory", id: "inventory" %>
+              </div>
+              <%= f.submit "商品を追加", class: "add-item-btn", id: "add-btn" %>
+            </div>
           <% end %>
-        </div>
+          <div class="required">※全ての項目が入力必須です</div>
+        <%# To add item %>
       </div>
+      <%# main header %>
+
+
       <div class="list-wrapper">
         <%# inventory list %>
         <div class="inventory-list">
@@ -44,7 +71,7 @@
                 <div class="item"><%= item.number_of_inventory %></div>
                 <div class="action-btn">
                   <div class="edit">編集</div>
-                  <div class="delete">削除</div>
+                  <div class="delte">削除</div>
                 </div>
               </div>
             <% end %>
@@ -52,35 +79,7 @@
         <%# inventory list %>
     </div>
 
-      <%# To add item %>
-      <%= form_with model: @item, url: items_path, id: "form", class: "hidden", local: true do |f| %>
-        <div class="new-item">
-          <div>
-            商品名
-            <span class="">必須</span>
-          </div>
-          <%= f.text_field :item_name, class: "item-name", id: "item-name" %>
-          <div>
-            サイズ
-            <span class="">必須</span>
-          </div>
-          <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"item-size"}) %>
-          <div>
-            価格
-            <span class="">必須</span>
-          </div>
-          <%= f.text_field :price, class: "price", id: "price" %>
-          <div>
-            在庫数
-            <span class="">必須</span>
-          </div>
-          <%= f.text_field :number_of_inventory, class: "inventory", id: "inventory" %>
-          <div>
-            <%= f.submit "商品を追加する", class: "add-btn", id: "add-btn" %>
-          </div>
-        </div>
-      <% end %>
-      <%# To add item %>
+    
     </div>
   </div>
 </div>
