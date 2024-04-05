@@ -11,11 +11,12 @@
 
 ## items
 
-| Column      | Type       | Options                |
-| ------------| ---------- | ---------------------- |
-| item_name   | string     | null: false, limit: 40 |
-| size_id     | integer    | null: false            |
-| price       | integer    | null: false            |
+| Column              | Type       | Options     |
+| ------------------- | ---------- | ----------- |
+| item_name           | string     | null: false |
+| size_id             | integer    | null: false |
+| price               | integer    | null: false |
+| number_of_inventory | integer    | null: false |
 
 
 ### Association
