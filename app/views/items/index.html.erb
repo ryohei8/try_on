@@ -63,18 +63,23 @@
             <div class="list-title">在庫数</div>
             <div class="list-title">編集/削除</div>
           </div>
-            <% @items.each do |item| %>
-              <div class="item-list">
-                <div class="item"><%= item.item_name %></div>
-                <div class="item"><%= item.size.name %></div>
-                <div class="item"><%= item.price %></div>
-                <div class="item"><%= item.number_of_inventory %></div>
-                <div class="action-btn">
-                  <div class="edit">編集</div>
-                  <div class="delte">削除</div>
-                </div>
-              </div>
-            <% end %>
+
+          <div id="list" class="item-list"></div>
+          <% @items.each do |item| %>
+          <div class="item-list">
+            <div class="item"><%= item.item_name %></div>
+            <div class="item"><%= item.size.name %></div>
+            <div class="item"><%= item.price %></div>
+            <div class="item"><%= item.number_of_inventory %></div>
+            <div class="action-btn">
+              <div class="edit">編集</div>
+              <div class="delete">削除</div>
+            </div>
+          </div>
+          <% end %>
+
+
+
       </div>
         <%# inventory list %>
     </div>
