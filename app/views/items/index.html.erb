@@ -7,8 +7,7 @@
       <div class="main-header">
         <div class="page-title">在庫一覧</div>
         <%# To add item %>
-        <%= render partial: 'item_form', locals: { item: @item } %>
-        <div class="required">※全ての項目が入力必須です</div>
+        <div><%= link_to "商品を登録",  new_item_path, class: "add-item-btn", id: "add-btn" %></div>
         <%# To add item %>
       </div>
       <%# main header %>
