@@ -131,15 +131,14 @@ a {
 }
 /* main */
 
-/* add-item */
 
-.add-item {
+/* form common */
+.bg {
   background-color: #E9EBEE;
   width: 100vw;
-  height: 100vh;
 }
 
-.add-item-wrapper {
+.register-wrapper {
   width: 480px;
   height: 100%;
   margin: 0 auto;
@@ -155,6 +154,38 @@ a {
   display: inline-block;
   margin-bottom: 40px;
 }
+
+/* form common */
+
+/* button common */
+
+.submit-btn {
+  text-align: right;
+}
+
+.cancel-btn {
+  color: #616771;
+  margin-right: 14px;
+}
+
+.register-btn {
+  display: inline-block;
+  width: 96px;
+  height: 42px;
+  padding: 14px 0;
+  text-align: center;
+  color: #fff;
+  background-color: #4267B3;
+  border-radius: 42px;
+  box-shadow: 0px 5px 16px -10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* button common */
+
+
+/* add-item */
+
 
 .add-item-block {
   background-color: #fff;
@@ -227,3 +258,11 @@ a {
   color: #F05A62;
 }
 /* add-item */
+
+/* register store */
+.register-block {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 5px 16px -10px rgba(0, 0, 0, 0.3);
+  padding: 48px 56px;
+}

@@ -1,0 +1,13 @@
+<div class="bg">
+
+  <div class="register-wrapper">
+    <div><%= link_to '<', stores_path, class: "go-back" %></div>
+
+    <div class="register-block">
+      <div class="page-title mb40">店舗を登録</div>
+      <%= render partial: 'store_form', locals: { store: @store } %>
+
+      
+    </div>
+  </div>
+</div>
