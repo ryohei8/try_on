@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :store
   belongs_to :size
+
 
   with_options presence: true do
     validates :item_name, :price
