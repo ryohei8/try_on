@@ -2,10 +2,12 @@
   <%# side-menu %>
   <%= render partial: 'side_menu' %>
   <%# side-menu %>
+
   <div class="right-wrapper">
     <div class="main">
       <div class="main-header">
-        <div class="page-title">在庫一覧</div>
+        <div class="page-title">商品内容を更新</div>
+
         <%# To add item %>
         <%= render partial: 'item_form', locals: { item: @item } %>
         <div class="required">※全ての項目が入力必須です</div>
