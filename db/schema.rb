@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_04_082441) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_08_080743) do
   create_table "items", charset: "utf8", force: :cascade do |t|
     t.string "item_name", null: false
     t.integer "size_id", null: false
@@ -18,6 +18,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_04_082441) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "number_of_inventory"
+  end
+
+  create_table "stores", charset: "utf8", force: :cascade do |t|
+    t.string "store_name", null: false
+    t.text "description", null: false
+    t.text "address", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.string "opening_hours", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
