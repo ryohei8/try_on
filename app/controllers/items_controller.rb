@@ -1,28 +1,34 @@
 class ItemsController < ApplicationController
   def index
-    @item = Item.new
     @items = Item.all.order("created_at DESC")
+  end
+
+  def new
+    @item = Item.new
   end
   
   def create
-    item = Item.create(item_params)
-    size = Size.find(item.size_id)
-    render json:{ item: item, size: size}, status: :created
+    @item = Item.create(item_params)
+    redirect_to root_path
   end
 
   def edit
     @item = Item.find(params[:id])
-    @items = Item.all.order("created_at DESC")
   end
 
   def update
     @item = Item.find(params[:id])
-    @size = Size.find(@item.size_id)
     if @item.update(item_params)
-      render json:{ item: @item, size: @size}, status: :ok
+      redirect_to root_path
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to root_path
   end
 
   private
