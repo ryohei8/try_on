@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_10_030915) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_10_092406) do
   create_table "items", charset: "utf8", force: :cascade do |t|
     t.string "item_name", null: false
     t.integer "size_id", null: false
@@ -18,6 +18,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_10_030915) do
     t.integer "number_of_inventory", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "store_id", null: false
+    t.index ["store_id"], name: "index_items_on_store_id"
   end
 
   create_table "stores", charset: "utf8", force: :cascade do |t|
@@ -47,5 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_10_030915) do
     t.index ["store_id"], name: "index_users_on_store_id"
   end
 
+  add_foreign_key "items", "stores"
   add_foreign_key "users", "stores"
 end

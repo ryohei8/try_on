@@ -55,6 +55,15 @@ a {
   display: inline-block;
   margin-bottom: 28px;
 }
+
+.main-feature {
+  margin-bottom: 24px;
+  border-bottom: solid 1px #d3d3d3;
+}
+
+.san {
+  color: #616771;
+}
 /* side-menu */
 
 
