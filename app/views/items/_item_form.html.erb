@@ -31,7 +31,6 @@
             </div>
             <%= f.collection_select :store_name, Store.all, :class: "text-field inventory", id: "inventory" %> 
           </div>
-            <%= f.hidden_field :store_id, value: .id %>
 
           <div class="required mb40">※全ての項目が必須入力です</div>
           <% if item.new_record? %>

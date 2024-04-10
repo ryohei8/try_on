@@ -6,8 +6,11 @@
     <div class="main">
       <div class="main-header">
         <div class="page-title">在庫一覧</div>
+        <% if user_signed_in? %>
+        <%= current_user.last_name %>
+        <% end %>
         <%# To add item %>
-        <div><%= link_to "商品を登録",  new_item_path, class: "add-item-btn", id: "add-btn" %></div>
+
         <%# To add item %>
       </div>
       <%# main header %>

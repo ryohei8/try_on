@@ -16,13 +16,13 @@
 
 ## users
 
-| Column                | Type       | Options                       |
-| --------------------- | ---------- | ----------------------------- |
-| first_name            | string     | null: false                   |
-| last_name             | string     | null: false                   |
-| email                 | string     | null: false, unique: true     |
-| encrypted_password    | string     | null: false                   |
-| store                 | references |null: false, foreign_key: true |
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | -----------------------------  |
+| first_name            | string     | null: false                    |
+| last_name             | string     | null: false                    |
+| email                 | string     | null: false, unique: true      |
+| encrypted_password    | string     | null: false                    |
+| store                 | references | null: false, foreign_key: true |
 
 
 ### Association
