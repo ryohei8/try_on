@@ -5,11 +5,12 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @store = Store.find(params[:store_id])
   end
   
   def create
     @item = Item.create(item_params)
-    redirect_to root_path
+    redirect_to items_path
   end
 
   def edit
@@ -33,6 +34,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:item_name, :size_id, :price, :number_of_inventory)
+    params.require(:item).permit(:item_name, :size_id, :price, :number_of_inventory).merge(store_id: params[:store_id])
   end
 end
