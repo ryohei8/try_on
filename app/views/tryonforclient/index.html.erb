@@ -1,0 +1,30 @@
+<h1 class="logo">Try On</h1>
+<p>欲しい商品で試着可能店舗を検索</p>
+
+<!-- Googleマップ表示エリア(地図を表示) -->
+<div id="map" style="height: 600px"></div>
+
+<!-- Googleマップ表示用の Javascript -->
+<script>
+  function initMap(){
+  // Show map
+  // Map options
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 35.6803997, lng: 139.7690174},
+    zoom: 12,
+  });
+
+  // Marker
+  <% @stores.each do |store| %>
+    // <% if store.item.number_of_inventory > 3 %>
+    marker = new google.maps.Marker({
+      map: map,
+      position:  { lat: <%= store.latitude %>, lng: <%= store.longitude %> },
+      });
+    // <% else %>
+    // <% end %>
+  <% end %>
+  }
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>

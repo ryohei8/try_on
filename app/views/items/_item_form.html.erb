@@ -1,4 +1,4 @@
-<%= form_with model: item, id: "addForm", class: "form", local: true do |f| %>
+<%= form_with model: [item, @store.id] id: "addForm", class: "form", local: true do |f| %>
 
         <div class="form-content">
           <div class="form-item">
@@ -25,11 +25,19 @@
             </div>
             <%= f.text_field :number_of_inventory, class: "text-field inventory", id: "inventory" %>
           </div>
+          <div class="form-item">
+            <div class="form-title">
+              販売店舗
+            </div>
+            <%= f.collection_select :store_name, Store.all, :class: "text-field inventory", id: "inventory" %> 
+          </div>
+            <%= f.hidden_field :store_id, value: .id %>
+
           <div class="required mb40">※全ての項目が必須入力です</div>
           <% if item.new_record? %>
             <div class="submit-btn">
               <%= link_to 'キャンセル', root_path, class: "cancel-btn" %>
-              <%= f.submit "登録", class: "add-item-btn", id: "add-btn" %>
+              <%= f.submit "登録", class: "register-btn", id: "register-btn" %>
             </div>
           <% else %>
             <div class="submit-btn">
