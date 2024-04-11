@@ -6,9 +6,45 @@
 
     <div class="add-item-block">
       <div class="page-title mb40">商品内容を編集</div>
+      <%= form_with model: @item, url: store_item_path, id: "addForm", class: "form", local: true do |f| %>
 
-    <%= render partial: 'item_form', locals: { item: @item } %>
+        <div class="form-content">
+          <div class="form-item">
+            <div class="form-title">
+              商品名
+            </div>
+            <%= f.text_field :item_name, class: "text-field", id: "item-name" %>
+          </div>
+          <div class="form-item">
+            <div class="form-title">
+              価格
+            </div>
+            <%= f.text_field :price, class: "text-field", id: "price" %>
+          </div>
+          <div class="form-item">
+            <div class="form-title">
+              サイズ
+            </div>
+            <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"item-size"}) %>
+          </div>
+          <div class="form-item">
+            <div class="form-title">
+              在庫数
+            </div>
+            <%= f.text_field :number_of_inventory, class: "text-field inventory", id: "inventory" %>
+          </div>
+          <div class="form-item">
+            <div><%= f.label :store_id, :所属店舗, class: "form-title" %></div>
+            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field inventory", id: "inventory" } %>
+          </div>
 
+          <div class="required mb40">※全ての項目が必須入力です</div>
+            <div class="submit-btn">
+              <%= link_to 'キャンセル', root_path, class: "cancel-btn" %>
+              <%= f.submit "保存", class: "register-btn", id: "register-btn" %>
+            </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

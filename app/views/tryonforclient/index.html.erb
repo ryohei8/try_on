@@ -16,13 +16,10 @@
 
   // Marker
   <% @stores.each do |store| %>
-    // <% if store.item.number_of_inventory > 3 %>
     marker = new google.maps.Marker({
       map: map,
       position:  { lat: <%= store.latitude %>, lng: <%= store.longitude %> },
       });
-    // <% else %>
-    // <% end %>
   <% end %>
   }
   </script>

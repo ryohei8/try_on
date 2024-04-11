@@ -6,8 +6,11 @@
     <div class="main">
       <div class="main-header">
         <div class="page-title">在庫一覧</div>
+
         <%# To add item %>
-        <div><%= link_to "商品を登録",  new_item_path, class: "add-item-btn", id: "add-btn" %></div>
+        <% if user_signed_in?%>
+        <div><%= link_to "商品を登録",  new_store_item_path(current_user.store_id), class: "add-item-btn", id: "add-btn" %></div>
+        <% end %>
         <%# To add item %>
       </div>
       <%# main header %>

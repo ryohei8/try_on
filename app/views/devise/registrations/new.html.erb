@@ -1,0 +1,47 @@
+<div class="bg">
+  <div class="register-wrapper">
+    <div><%= link_to '<', :back, class: "go-back" %></div>
+    <div class="add-item-block"> 
+      <div class="page-title mb40">アカウント作成</div>
+
+      <div class="form_content">
+        <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="form-item">
+            <div><%= f.label :姓, class: "form-title" %></div>
+            <%= f.text_field :last_name, class: "text-field" %>
+          </div>
+          <div class="form-item">
+            <div><%= f.label :名, class: "form-title" %></div>
+            <%= f.text_field :first_name, class: "text-field" %>
+          </div>
+
+          <div class="form-item">
+            <div><%= f.label :email, class: "form-title" %></div>
+            <%= f.email_field :email, class: "text-field" %>
+          </div>
+
+          <div class="form-item">
+            <div><%= f.label :password, class: "form-title" %></div>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "6文字以上入力して下さい", class: "text-field" %>
+          </div>
+
+          <div class="form-item">
+            <div><%= f.label :password_confirmation, class: "form-title" %></div>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "text-field" %>
+          </div>
+
+          <div class="form-item">
+            <div><%= f.label :store_id, :所属店舗, class: "form-title" %></div>
+            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field inventory", id: "inventory" } %>
+          </div>
+
+          <div class="submit-btn">
+            <%= link_to 'キャンセル', root_path, class: "cancel-btn" %>
+            <%= f.submit "新規登録", class: "register-btn" %>
+          </div>
+        <% end %>
+        </div>
+    </div>
+  </div>
+</div>

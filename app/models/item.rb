@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :store
   belongs_to :size
+  belongs_to :store
 
 
   # with_options presence: true do

@@ -1,9 +1,17 @@
   <div class="side-menu">
     <h1><%= link_to 'Try On', root_path, class: "logo" %></h1>
     <div class="menu-list">
-      <div><%= link_to '店舗一覧', stores_path, class: "menu-item" %></div>
-      <div><%= link_to '在庫一覧', root_path, class: "menu-item" %></div>
-      <div><%= link_to '管理者一覧', root_path, class: "menu-item" %></div>
+      <div class="main-feature">
+        <div><%= link_to '店舗一覧', stores_path, class: "menu-item" %></div>
+        <div><%= link_to '在庫一覧', root_path, class: "menu-item" %></div>
+      </div>
+       <% if user_signed_in? %>
+        <div><%= link_to current_user.last_name, edit_user_registration_path, class: "menu-item" %> <span class="san">さん</span></div>
+        <div><%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "menu-item" %></div>
+      <% else %>
+        <div><%= link_to "アカウント作成", new_user_registration_path, class: "menu-item" %></div>
+        <div><%= link_to "ログイン", new_user_session_path, class: "menu-item" %></div>
+      <% end %>
     </div>
   </div>
   
