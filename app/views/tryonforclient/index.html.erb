@@ -1,38 +1,40 @@
-<h1 class="logo">Try On</h1>
-<p>欲しい商品で試着可能店舗を検索</p>
+<div class="shopper-screen">
+  <h1 class="logo">Try On</h1>
+  <div class="title">欲しい商品から<span>試着可能店舗</span>を検索</div>
 
-<!-- 検索フォーム -->
-
-<%= search_form_for @q, url:  tryonforclient_index_search_path, html: {id: "detailed-search-form"} do |f| %>
-    <%= f.label :item_name_cont, '商品名' %>
-    <%= f.search_field :item_name_cont, class: "form-control" %>
-    <%= f.submit '検索' %>
-  <% end %>
-
-
-
-<!-- Googleマップ表示エリア(地図を表示) -->
-<div id="map" style="height: 600px"></div>
-
-<!-- Googleマップ表示用の Javascript -->
-<script>
-  function initMap() {
-    // Show map
-    var map = new google.maps.Map(document.getElementById('map'), {
-      // Map options
-      center: { lat: 35.6803997, lng: 139.7690174 },
-      zoom: 12,
-    });
-
-    <% @markers.each do |marker| %>
-    var marker<%= marker.object_id %> = new google.maps.Marker({
-      position: { lat: <%= marker[:lat] %>, lng: <%= marker[:lng] %> },
-      map: map
-    });
+  <!-- 検索フォーム -->
+  <div class="search-form">
+    <%= search_form_for @q, url:  tryonforclient_index_search_path, html: {id: "detailed-search-form"} do |f| %>
+      <%= f.search_field :item_name_cont, placeholder: '商品名を入力して下さい', class: "search-field" %>
+      <%= f.submit '検索', class: "search-btn" %>
     <% end %>
-  }
+  </div>
 
-</script>
+
+
+  <!-- Googleマップ表示エリア(地図を表示) -->
+  <div id="map" style="height: 600px"></div>
+
+  <!-- Googleマップ表示用の Javascript -->
+  <script>
+    function initMap() {
+      // Show map
+      var map = new google.maps.Map(document.getElementById('map'), {
+        // Map options
+        center: { lat: 35.6803997, lng: 139.7690174 },
+        zoom: 12,
+      });
+
+      <% @markers.each do |marker| %>
+      var marker<%= marker.object_id %> = new google.maps.Marker({
+        position: { lat: <%= marker[:lat] %>, lng: <%= marker[:lng] %> },
+        map: map
+      });
+      <% end %>
+    }
+
+  </script>
+</div>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
 
   
