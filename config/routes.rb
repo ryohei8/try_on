@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'tryonforclient/index'
-  get 'tryonforclient/index/search'
+  get '/search', to: 'tryonforclient#search'
+  post '/search', to: 'tryonforclient#search'
 
 
   root to: 'items#index'

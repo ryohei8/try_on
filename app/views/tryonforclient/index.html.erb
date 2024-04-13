@@ -4,7 +4,7 @@
 
   <!-- 検索フォーム -->
   <div class="search-form">
-    <%= search_form_for @q, url: tryonforclient_index_search_path, html: {id: "detailed-search-form"} do |f| %>
+    <%= search_form_for @q, url: search_path, html: {id: "detailed-search-form"} do |f| %>
       <%= f.search_field :item_name_cont, placeholder: '商品名を入力して下さい', class: "search-field", id: "search-field-value"%>
       <%= f.submit '検索', class: "search-btn", id: "search-submit"%>
     <% end %>
@@ -15,7 +15,7 @@
 </div>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>
-  <script src="path_to/map.js"></script>
+  <%= javascript_include_tag 'map' %>
 
 
   
