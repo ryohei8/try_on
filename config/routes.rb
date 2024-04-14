@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'tryonforclient/index'
-  get '/search', to: 'tryonforclient#search'
   post '/search', to: 'tryonforclient#search'
 
 

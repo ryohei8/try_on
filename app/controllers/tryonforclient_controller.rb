@@ -1,13 +1,11 @@
 class TryonforclientController < ApplicationController
+  before_action :set_search_object
+
   def index
-    tryonforclient = Tryonforclient.new
-    @stores = tryonforclient.stores
-    @items = tryonforclient.items
-    @q = Item.ransack(params[:q])
   end
 
   def search
-    @q = Item.ransack(params[:q])
+    return render json: { error: "商品名が指定されていません。" }, status: 400 if params[:q][:item_name_cont].blank?
     search_result = @q.result.includes(:store)
     stores_with_inventory = search_result.select{ |item| item.number_of_inventory > 3 }.map(&:store)
 
@@ -18,5 +16,11 @@ class TryonforclientController < ApplicationController
       }
     end
     render json:{ markers: markers }
+  end
+
+  private
+
+  def set_search_object
+    @q = Item.ransack(params[:q])
   end
 end
