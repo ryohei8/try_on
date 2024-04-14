@@ -9,6 +9,7 @@ ja:
         last_name: 名
         email: Eメール
         password: パスワード
+        store: 所属店舗
       store:
         store_name: 店舗名
         address: 住所
