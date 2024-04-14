@@ -9,7 +9,7 @@
 | longitude        | float   | null: false |
 | opening_hours    | string  | null: false |
 
-### Association
+### Association 
 - has_many :items
 - has_many :users
 
