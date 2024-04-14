@@ -3,7 +3,7 @@
 | Column           | Type    | Options     |
 | ---------------- | ------  | ----------- |
 | store_name       | string  | null: false |
-| description      | text    | null: false |
+| description      | text    |             |
 | address          | text    | null: false |
 | latitude         | float   | null: false |
 | longitude        | float   | null: false |

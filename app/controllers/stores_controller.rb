@@ -8,8 +8,12 @@ class StoresController < ApplicationController
   end
 
   def create
-    @store = Store.create(store_params)
-    redirect_to stores_path
+    @store = Store.new(store_params)
+    if @store.save
+      redirect_to stores_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
   
   def edit

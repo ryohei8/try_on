@@ -4,11 +4,11 @@ class Item < ApplicationRecord
   belongs_to :store
 
 
-  # with_options presence: true do
-  #   validates :item_name, :price, :number_of_inventory
-  #   #sizeの選択が「---」の時は保存できないようにする
-  #   validates :size_id, numericality: { other_than: 1 , message: "can't be blank" } 
-
+  with_options presence: true do
+    validates :item_name, :price, :number_of_inventory
+    #sizeの選択が「---」の時は保存できないようにする
+    validates :size_id, numericality: { other_than: 1 , message: "can't be blank" } 
+  end
 
   def self.ransackable_attributes(auth_object = nil)
     ["item_name", "number_of_inventory", "store_id"]

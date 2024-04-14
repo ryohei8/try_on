@@ -3,6 +3,9 @@
     <div><%= link_to '<', stores_path, class: "go-back" %></div>
     <div class="register-block">
       <div class="page-title mb40">店舗を登録</div>
+      <%= form_with model: @store, local: true do |f| %>
+        <%= render 'shared/error_messages', model: f.object %> 
+      <% end %> 
       <%= render partial: 'store_form', locals: { store: @store } %>
     </div>
   </div>
