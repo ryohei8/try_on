@@ -154,6 +154,7 @@ a {
 .bg {
   background-color: #E9EBEE;
   width: 100vw;
+  height: 100vh;
 }
 
 .register-wrapper {
@@ -170,10 +171,26 @@ a {
   text-decoration: none;
   color: #4267B3;
   display: inline-block;
+}
+
+.register-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 40px;
 }
 
+.account-btn {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #4267B3;
+  display: inline-block;
+}
 /* form common */
+
+
 
 /* button common */
 
