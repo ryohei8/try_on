@@ -15,4 +15,14 @@ ja:
         opening_hours: 営業時間
         latitude: 緯度
         longitude: 経度
+      item:
+        store: 取り扱い店舗
+        item_name: 商品名
+        price: 価格
+        number_of_inventory: 在庫数
+        size_id: サイズ
+    
+
+
+
 

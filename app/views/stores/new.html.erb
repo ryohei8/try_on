@@ -4,9 +4,9 @@
     <div class="register-block">
       <div class="page-title mb40">店舗を登録</div>
       <div class="error-block">
-        <%= form_with model: @store, local: true do |f| %>
-          <%= render 'shared/error_messages', model: f.object %> 
-        <% end %> 
+      <%= form_with model: @store, local: true do |f| %>
+        <%= render 'shared/error_messages', model: f.object %> 
+      <% end %> 
       </div>
       <%= render partial: 'store_form', locals: { store: @store } %>
     </div>
