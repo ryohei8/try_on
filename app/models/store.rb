@@ -5,8 +5,8 @@ class Store < ApplicationRecord
   with_options presence: true do
     validates :store_name
     validates :address
+    validates :opening_hours
     validates :latitude
     validates :longitude
-    validates :opening_hours
   end
 end
