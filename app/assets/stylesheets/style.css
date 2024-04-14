@@ -27,6 +27,15 @@ a {
 .mb40 {
   margin-bottom: 40px;
 }
+
+.error-block {
+  margin-bottom: 28px;
+}
+
+.error-message {
+  color: #F05A62;
+  margin-bottom: 10px;
+}
 /* common */
 
 /* side-menu */
