@@ -3,3 +3,5 @@ ja:
     failure:
       invalid: "メールアドレスまたはパスワードが正しくありません。"
       not_found_in_database: "アカウントが見つかりません。"
+    sessions:
+      signed_out: "ログアウトしました。"

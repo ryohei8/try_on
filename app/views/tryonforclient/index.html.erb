@@ -11,6 +11,7 @@
   </div>
   <!-- Googleマップ表示エリア(地図を表示) -->
   <div id="map" style="height: 600px"></div>
+  <%= render 'shared/footer' %>
 </div>
   <%= javascript_include_tag 'map' %>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap" async defer></script>

@@ -25,7 +25,7 @@
             <div class="list-title">編集 / 削除</div>
           </div>
 
-       <% @stores.each do |store| %>
+            <% @stores.each do |store| %>
             <div class="item-list">
               <div class="item"><%= store.store_name %></div>
               <div class="item"><%= store.description %></div>
@@ -40,5 +40,6 @@
         </div>
       <%# store list %>
     </div>
+    <%= render 'shared/footer' %>
   </div>
 </div>
