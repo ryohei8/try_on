@@ -22,6 +22,7 @@ ja:
       item:
         store: 取り扱い店舗
         item_name: 商品名
+        color: カラー
         price: 価格
         number_of_inventory: 在庫数
         size_id: サイズ

@@ -27,6 +27,11 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include "サイズを選択してください"
       end
+      it 'colorが空では登録できない' do
+        @item.color = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include "カラーを入力してください"
+      end
       it 'number_of_inventoryが空では登録できない' do
         @item.number_of_inventory = ''
         @item.valid?

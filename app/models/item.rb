@@ -5,7 +5,7 @@ class Item < ApplicationRecord
 
 
   with_options presence: true do
-    validates :item_name, :price, :number_of_inventory
+    validates :item_name, :color, :price, :number_of_inventory
     #sizeの選択が「---」の時は保存できないようにする
     validates :size_id, numericality: { other_than: 1 , message: "を選択してください" } 
   end
