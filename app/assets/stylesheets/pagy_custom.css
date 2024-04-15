@@ -1,0 +1,14 @@
+.pagination {
+  margin-top: 36px;
+  text-align: center;
+}
+.pagy a {
+  display: inline-block;
+  color: #4267B3;
+  background-color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 8px -4px rgba(0, 0, 0, 0.3);
+}

@@ -80,4 +80,4 @@ gem "dotenv-rails"
 gem 'devise'
 gem "ransack"
 gem 'rails-i18n'
-
+gem 'pagy', '~> 8.1'

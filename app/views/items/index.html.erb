@@ -19,6 +19,10 @@
       <div class="list-wrapper">
         <%= render partial: 'item_list', locals: { items: @items } %>
       </div>
+      <div class="pagination">
+        <%== pagy_nav(@pagy) %>
+      </div>
+
       <%# item list %>
     <%= render 'shared/footer' %>
 

@@ -17,28 +17,31 @@
       <%# store list %>
       <div class="list-wrapper">
       <div class="inventory-list">
-          <div class="list-header">
-            <div class="list-title">店舗名</div>
-            <div class="list-title">説明</div>
-            <div class="list-title">住所</div>
-            <div class="list-title">営業時間</div>
-            <div class="list-title">編集 / 削除</div>
-          </div>
-
-            <% @stores.each do |store| %>
-            <div class="item-list">
-              <div class="item"><%= store.store_name %></div>
-              <div class="item"><%= store.description %></div>
-              <div class="item"><%= store.address %></div>
-              <div class="item"><%= store.opening_hours %></div>
-              <div class="action-btn">
-                <div><%= link_to '編集', edit_store_path(store), class: "edit" %></div>
-                <div><%= link_to '削除', store_path(store.id), data: { turbo_method: :delete },  class:"delete" %></div>
-              </div>
-            </div>
-            <% end %>
+        <div class="list-header">
+          <div class="list-title">店舗名</div>
+          <div class="list-title">説明</div>
+          <div class="list-title">住所</div>
+          <div class="list-title">営業時間</div>
+          <div class="list-title">編集 / 削除</div>
         </div>
+
+        <% @stores.each do |store| %>
+        <div class="item-list">
+          <div class="item"><%= store.store_name %></div>
+          <div class="item"><%= store.description %></div>
+          <div class="item"><%= store.address %></div>
+          <div class="item"><%= store.opening_hours %></div>
+          <div class="action-btn">
+            <div><%= link_to '編集', edit_store_path(store), class: "edit" %></div>
+            <div><%= link_to '削除', store_path(store.id), data: { turbo_method: :delete },  class:"delete" %></div>
+          </div>
+        </div>
+        <% end %>
+      </div>
       <%# store list %>
+    </div>
+    <div class="pagination">
+      <%== pagy_nav(@pagy) %>
     </div>
     <%= render 'shared/footer' %>
   </div>
