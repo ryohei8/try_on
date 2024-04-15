@@ -16,6 +16,7 @@ a {
 
 .right-wrapper {
   background-color: #E9EBEE;
+  overflow: auto;
 }
 /* common */
 .hidden {

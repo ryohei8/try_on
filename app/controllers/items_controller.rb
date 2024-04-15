@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index] 
 
   def index
-    @pagy, @items = pagy(Item.all.order("created_at DESC"), items: 10)
+    @pagy, @items = pagy(Item.all.order("created_at DESC"), items: 20)
   end
 
   def new
