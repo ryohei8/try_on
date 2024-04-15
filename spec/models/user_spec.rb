@@ -28,15 +28,21 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include "Eメールを入力してください"
       end
       it 'すでに存在するemailは登録できない' do
-        existing_user = FactoryBot.build(:user, email: @user.email)
-        @user.email = existing_user
-        @user.valid?
-        expect(existing_user.errors.full_messages).to include "Eメールはすでに存在します"
+        @user = FactoryBot.create(:user)
+        same_email = FactoryBot.build(:user, email: @user.email)
+        same_email.valid?
+        expect(same_email.errors.full_messages).to include "Eメールはすでに存在します"
       end
       it 'passwordが空では登録できない' do
         @user.password = ''
         @user.valid?
         expect(@user.errors.full_messages).to include "パスワードを入力してください"
+      end
+      it 'passwordとpassword_confirmationが一致しないと登録できない' do
+        @user.password = '000000'
+        @user.password_confirmation = '123456'
+        @user.valid?
+        expect(@user.errors.full_messages).to include "パスワードを確認とパスワードの入力が一致しません"
       end
       it 'storeが空では登録できない' do
         @user.store = nil
