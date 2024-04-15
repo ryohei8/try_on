@@ -6,7 +6,7 @@ RSpec.describe Store, type: :model do
   end
   describe '店舗登録' do
     context '店舗を登録できる' do
-      it '全ての項目が存在すれば登録できる' do
+      it 'description以外の全ての項目が存在すれば登録できる' do
         expect(@store).to be_valid
       end
     end
