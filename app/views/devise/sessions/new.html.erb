@@ -7,11 +7,16 @@
     <div class="add-item-block"> 
       <div class="page-title mb40">ログイン</div>
 
+      <div class="error-block">
+        <% flash.each do |message_type, message| %>
+          <%= content_tag :div, message, class: "error-message" %>
+        <% end %>
+      </div>
+
       <div class="form_content">
 
 
       <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
 
 
           <div class="form-item">
