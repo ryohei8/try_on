@@ -4,6 +4,7 @@
 }
 .pagy a {
   display: inline-block;
+  font-family: "Roboto", sans-serif;
   color: #4267B3;
   background-color: #fff;
   text-decoration: none;

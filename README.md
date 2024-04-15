@@ -35,6 +35,7 @@
 | ------------------- | ---------- | ------------------------------ |
 | item_name           | string     | null: false                    |
 | size_id             | integer    | null: false                    |
+| color               | integer    | null: false                    |
 | price               | integer    | null: false                    |
 | number_of_inventory | integer    | null: false                    |
 | store               | references | null: false, foreign_key: true |

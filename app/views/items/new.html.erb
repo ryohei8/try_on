@@ -24,16 +24,23 @@
           </div>
           <div class="form-item">
             <div class="form-title">
-              価格
+              カラー
             </div>
-            <%= f.text_field :price, class: "text-field", id: "price" %>
+            <%= f.text_field :color, class: "text-field", id: "color" %>
           </div>
-          <div class="form-item">
+            <div class="form-item">
             <div class="form-title">
               サイズ
             </div>
             <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"item-size"}) %>
           </div>
+          <div class="form-item">
+            <div class="form-title">
+              価格
+            </div>
+            <%= f.text_field :price, class: "text-field", id: "price" %>
+          </div>
+        
           <div class="form-item">
             <div class="form-title">
               在庫数

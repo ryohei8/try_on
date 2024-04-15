@@ -2,8 +2,9 @@
         <div class="inventory-list">
           <div class="list-header">
             <div class="list-title">商品名</div>
-            <div class="list-title">価格</div>
+            <div class="list-title">カラー</div>
             <div class="list-title">サイズ</div>
+            <div class="list-title">価格</div>
             <div class="list-title">在庫数</div>
             <div class="list-title">編集 / 削除</div>
           </div>
@@ -14,8 +15,9 @@
             <% items.each do |item| %>
             <div class="item-list">
               <div class="item"><%= item.item_name %></div>
-              <div class="item"><%= item.price %></div>
+              <div class="item"><%= item.color %></div>
               <div class="item"><%= item.size.name %></div>
+              <div class="item"><%= item.price %></div>
               <div class="item"><%= item.number_of_inventory %></div>
               <div class="action-btn">
                 <div><%= link_to '編集', edit_store_item_path(store_id: item.store_id, id: item.id), class: "edit" %></div>
