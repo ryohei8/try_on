@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
+  include Pagy::Frontend
   before_action :authenticate_user!, except: [:index] 
 
   def index
-    @items = Item.all.order("created_at DESC")
+    @pagy, @items = pagy(Item.all.order("created_at DESC"), items: 10)
   end
 
   def new
