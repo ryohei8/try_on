@@ -1,12 +1,20 @@
 <div class="bg">
   <div class="register-wrapper">
-    <div><%= link_to '<', :back, class: "go-back" %></div>
+    <div class="register-header">
+      <div><%= link_to '<', root_path, class: "go-back" %></div>
+      <div><%= link_to 'すでにアカウントをお持ちの方はこちら', new_user_session_path, class: "account-btn" %></div>
+    </div>
     <div class="add-item-block"> 
       <div class="page-title mb40">アカウント作成</div>
 
+      <div class="error-block">
+      <%= form_with model: @user, url: new_user_registration_path, local: true do |f| %>
+        <%= render 'shared/error_messages', model: f.object %> 
+      <% end %> 
+      </div>
+
       <div class="form_content">
         <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
           <div class="form-item">
             <div><%= f.label :姓, class: "form-title" %></div>
             <%= f.text_field :last_name, class: "text-field" %>
@@ -27,13 +35,13 @@
           </div>
 
           <div class="form-item">
-            <div><%= f.label :password_confirmation, class: "form-title" %></div>
+            <div><%= f.label :パスワードを確認, class: "form-title" %></div>
             <%= f.password_field :password_confirmation, autocomplete: "off", class: "text-field" %>
           </div>
 
           <div class="form-item">
             <div><%= f.label :store_id, :所属店舗, class: "form-title" %></div>
-            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field inventory", id: "inventory" } %>
+            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field", id: "store" } %>
           </div>
 
           <div class="submit-btn">

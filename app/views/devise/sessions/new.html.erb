@@ -1,7 +1,9 @@
 <div class="bg">
   <div class="register-wrapper">
-    <div><%= link_to '<', root_path, class: "go-back" %></div>
-    <div><%= link_to 'アカウントを作成', new_user_registration_path, class: "go-back" %></div>
+    <div class="register-header">
+      <div><%= link_to '<', root_path, class: "go-back" %></div>
+      <div><%= link_to 'アカウントをお持ちでない方はこちら', new_user_registration_path, class: "account-btn" %></div>
+    </div>
     <div class="add-item-block"> 
       <div class="page-title mb40">ログイン</div>
 

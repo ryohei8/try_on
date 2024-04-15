@@ -1,9 +1,17 @@
 
 <div class="bg">
   <div class="register-wrapper">
-    <div><%= link_to '<', :back, class: "go-back" %></div>
+    <div class="register-header">
+      <div><%= link_to '<', root_path, class: "go-back" %></div>
+    </div>
     <div class="add-item-block">
       <div class="page-title mb40">商品を登録</div>
+
+      <div class="error-block">
+        <%= form_with model: @item, url: store_items_path, local: true do |f| %>
+          <%= render 'shared/error_messages', model: f.object %> 
+        <% end %> 
+      </div>
 
       <%= form_with model: @item, url: store_items_path, id: "addForm", class: "form", local: true do |f| %>
 
@@ -33,11 +41,10 @@
             <%= f.text_field :number_of_inventory, class: "text-field inventory", id: "inventory" %>
           </div>
           <div class="form-item">
-            <div><%= f.label :store_id, :所属店舗, class: "form-title" %></div>
-            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field inventory", id: "inventory" } %>
+            <div><%= f.label :store_id, :取り扱い店舗, class: "form-title" %></div>
+            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field", id: "store" } %>
           </div>
 
-          <div class="required mb40">※全ての項目が必須入力です</div>
             <div class="submit-btn">
               <%= link_to 'キャンセル', root_path, class: "cancel-btn" %>
               <%= f.submit "登録", class: "register-btn", id: "register-btn" %>
