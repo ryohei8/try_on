@@ -28,7 +28,7 @@
 
           <div class="form-item">
             <div><%= f.label :store_id, :所属店舗, class: "form-title" %></div>
-            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field inventory", id: "inventory" } %>
+            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field" } %>
           </div>
 
             <div class="form-item">
