@@ -1,4 +1,5 @@
 class TryonforclientController < ApplicationController
+  before_action :basic_auth
   before_action :set_search_object
 
   def index
