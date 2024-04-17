@@ -78,7 +78,7 @@ Try On
 - 管理者権限機能
 - エンタプライズ企業向け想定の店舗管理機能(本社から管理？)
 # UIデザイン（ラフスケッチ）
-※初期構想のため追加実装と判断したものも含まれます。
+※初期構想のため追加実装と判断し、未実装の機能も含んでいます。
 [![Image from Gyazo](https://i.gyazo.com/a79ecc1ad3c8d492aa7ab33689059ea7.png)](https://gyazo.com/a79ecc1ad3c8d492aa7ab33689059ea7)
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/05fa2b6e2ad8e18180433b88d333370a.png)](https://gyazo.com/05fa2b6e2ad8e18180433b88d333370a)
