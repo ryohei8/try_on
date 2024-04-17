@@ -44,41 +44,8 @@ Try On
 # MVP要件(ペルソナ・ユーザージャーニー等を元に洗い出した)
 [![Image from Gyazo](https://i.gyazo.com/743c4fbdc29f6b8a1e1ee35952c23f58.png)](https://gyazo.com/743c4fbdc29f6b8a1e1ee35952c23f58)
 
-# メイン機能についての画像や動画
-### 販売者側
-- 在庫一覧（トップページ）
-[![Image from Gyazo](https://i.gyazo.com/bd998a4ffc953f6cc99d4919a3b1603e.png)](https://gyazo.com/bd998a4ffc953f6cc99d4919a3b1603e)
-- アカウント作成
-トップページ → アカウント作成押下 → 下記ページ
-[![Image from Gyazo](https://i.gyazo.com/77107f509d69389f99a6101a2d92d95b.gif)](https://gyazo.com/77107f509d69389f99a6101a2d92d95b)
-- 店舗登録
-トップページ → 店舗一覧 → 店舗を登録押下 → 下記ページ
-[![Image from Gyazo](https://i.gyazo.com/4fb9aef7d6d8e4b6b5aff5037c2d621e.gif)](https://gyazo.com/4fb9aef7d6d8e4b6b5aff5037c2d621e)
-- 商品登録
-トップページ → 商品を登録押下 → 下記ページ
-[![Image from Gyazo](https://i.gyazo.com/c11c2423790e5b269d615d0e8e448b10.gif)](https://gyazo.com/c11c2423790e5b269d615d0e8e448b10)
-### 試着可能店舗検索app
-[![Image from Gyazo](https://i.gyazo.com/393e8bf2c0d2dc265c6a03b51bcd7ff4.gif)](https://gyazo.com/393e8bf2c0d2dc265c6a03b51bcd7ff4)
-
-
-
-
-# 追加実装検討中機能
-消費者側
-- 店舗情報をマーカーから確認できる機能
-- 現在地許可機能
-- ルート検索機能
-- 検索機能改善（フィルターを実装し、精度をあげるなど）
-- その他、在庫管理アプリやレジの在庫と連携できないか
-
-販売側
-- 商品を登録する際に店舗を自動で紐づける機能
-- 登録情報追加
-- 検索機能
-- 管理者権限機能
-- エンタプライズ企業向け想定の店舗管理機能(本社から管理？)
 # UIデザイン（ラフスケッチ）
-※初期構想のため追加実装と判断し、未実装の機能も含んでいます。
+### ※初期構想のため追加実装と判断し、未実装の機能も含んでいます。
 [![Image from Gyazo](https://i.gyazo.com/a79ecc1ad3c8d492aa7ab33689059ea7.png)](https://gyazo.com/a79ecc1ad3c8d492aa7ab33689059ea7)
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/05fa2b6e2ad8e18180433b88d333370a.png)](https://gyazo.com/05fa2b6e2ad8e18180433b88d333370a)
@@ -130,6 +97,44 @@ Try On
 
 ### Association
 - belongs_to : store
+
+
+# メイン機能についての画像や動画
+### 販売者側
+- 在庫一覧（トップページ）
+[![Image from Gyazo](https://i.gyazo.com/bd998a4ffc953f6cc99d4919a3b1603e.png)](https://gyazo.com/bd998a4ffc953f6cc99d4919a3b1603e)
+- アカウント作成
+トップページ → アカウント作成押下 → 下記ページ
+[![Image from Gyazo](https://i.gyazo.com/77107f509d69389f99a6101a2d92d95b.gif)](https://gyazo.com/77107f509d69389f99a6101a2d92d95b)
+- 店舗登録
+トップページ → 店舗一覧 → 店舗を登録押下 → 下記ページ
+[![Image from Gyazo](https://i.gyazo.com/4fb9aef7d6d8e4b6b5aff5037c2d621e.gif)](https://gyazo.com/4fb9aef7d6d8e4b6b5aff5037c2d621e)
+- 商品登録
+トップページ → 商品を登録押下 → 下記ページ
+[![Image from Gyazo](https://i.gyazo.com/c11c2423790e5b269d615d0e8e448b10.gif)](https://gyazo.com/c11c2423790e5b269d615d0e8e448b10)
+### 試着可能店舗検索app
+[![Image from Gyazo](https://i.gyazo.com/393e8bf2c0d2dc265c6a03b51bcd7ff4.gif)](https://gyazo.com/393e8bf2c0d2dc265c6a03b51bcd7ff4)
+
+# 追加実装検討中機能
+消費者側
+- 店舗情報をマーカーから確認できる機能
+- 現在地許可機能
+- ルート検索機能
+- 検索機能改善（フィルターを実装し、精度をあげるなど）
+- その他、在庫管理アプリやレジの在庫と連携できないか
+
+販売側
+- 商品を登録する際に店舗を自動で紐づける機能
+- 登録情報追加
+- 検索機能
+- 管理者権限機能
+- エンタプライズ企業向け想定の店舗管理機能(本社から管理？)
+
+
+
+
+
+
 # 開発環境
 ### フロントエンド
 - HTML, CSS, JavaScript
