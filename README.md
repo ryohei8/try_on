@@ -58,7 +58,6 @@ Try On
 トップページ → 商品を登録押下 → 下記ページ
 [![Image from Gyazo](https://i.gyazo.com/c11c2423790e5b269d615d0e8e448b10.gif)](https://gyazo.com/c11c2423790e5b269d615d0e8e448b10)
 ### 試着可能店舗検索app
-- 試着可能店舗検索
 [![Image from Gyazo](https://i.gyazo.com/393e8bf2c0d2dc265c6a03b51bcd7ff4.gif)](https://gyazo.com/393e8bf2c0d2dc265c6a03b51bcd7ff4)
 
 
