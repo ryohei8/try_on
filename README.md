@@ -20,14 +20,14 @@ Try On
 ※現状、消費者側の試着店舗確認アプリではアカウント登録なしで利用できることを想定しています。
 
 # 利用方法
-## 店舗登録、商品登録
+## 店舗登録、商品登録（販売側）
 1. テスト用アカウントでログインする。または、アカウント作成から新規登録。
 2. 店舗一覧から「店舗を登録」を押下し、店舗登録画面で項目を入力する。
 3. 緯度・経度の項目はGooglemapで任意の店舗を検索し、その上でマーカーを右クリックすると表示されるのでコピーしてそれぞれ入力し登録。
 4. 商品一覧から「商品を登録」を押下し、商品登録画面で項目を入力する。（在庫数が3以下だとマップにマーカーが表示されません。）
 5. 取り扱い店舗を選択して、商品と店舗の情報を紐付ける。
 
-## 試着可能店舗を地上で検索して確認
+## 試着可能店舗を地図上で検索して確認（消費者側）
 1. 検索ウィンドウに先ほど登録した商品名を入力。
 2. 在庫が４以上であれば、先ほど紐付けた店舗のマーカーが地図上で確認できる。
 
@@ -39,10 +39,53 @@ Try On
 # ターゲットユーザー・ペルソナ
 [![Image from Gyazo](https://i.gyazo.com/1fa1ec518670052b40309e928b6d9d8a.png)](https://gyazo.com/1fa1ec518670052b40309e928b6d9d8a)
 ### 簡易ユーザージャーニー
+※消費者側の試着可能店舗検索app
 [![Image from Gyazo](https://i.gyazo.com/0a432ded7e09792ca4d5042adc3d088c.png)](https://gyazo.com/0a432ded7e09792ca4d5042adc3d088c)
-# ペルソナを元に洗い出したMVP要件
+# MVP要件(ペルソナ・ユーザージャーニー等を元に洗い出した)
 [![Image from Gyazo](https://i.gyazo.com/743c4fbdc29f6b8a1e1ee35952c23f58.png)](https://gyazo.com/743c4fbdc29f6b8a1e1ee35952c23f58)
+
+# メイン機能についての画像や動画
+### 販売者側
+- 在庫一覧（トップページ）
+[![Image from Gyazo](https://i.gyazo.com/bd998a4ffc953f6cc99d4919a3b1603e.png)](https://gyazo.com/bd998a4ffc953f6cc99d4919a3b1603e)
+- アカウント作成
+トップページ → アカウント作成押下 → 下記ページ
+[![Image from Gyazo](https://i.gyazo.com/77107f509d69389f99a6101a2d92d95b.gif)](https://gyazo.com/77107f509d69389f99a6101a2d92d95b)
+- 店舗登録
+トップページ → 店舗一覧 → 店舗を登録押下 → 下記ページ
+[![Image from Gyazo](https://i.gyazo.com/4fb9aef7d6d8e4b6b5aff5037c2d621e.gif)](https://gyazo.com/4fb9aef7d6d8e4b6b5aff5037c2d621e)
+- 商品登録
+トップページ → 商品を登録押下 → 下記ページ
+[![Image from Gyazo](https://i.gyazo.com/c11c2423790e5b269d615d0e8e448b10.gif)](https://gyazo.com/c11c2423790e5b269d615d0e8e448b10)
+### 試着可能店舗検索app
+- 試着可能店舗検索
+[![Image from Gyazo](https://i.gyazo.com/393e8bf2c0d2dc265c6a03b51bcd7ff4.gif)](https://gyazo.com/393e8bf2c0d2dc265c6a03b51bcd7ff4)
+
+
+
+
+# 追加実装検討中機能
+消費者側
+- 店舗情報をマーカーから確認できる機能
+- 現在地許可機能
+- ルート検索機能
+- 検索機能改善（フィルターを実装し、精度をあげるなど）
+- その他、在庫管理アプリやレジの在庫と連携できないか
+
+販売側
+- 商品を登録する際に店舗を自動で紐づける機能
+- 登録情報追加
+- 検索機能
+- 管理者権限機能
+- エンタプライズ企業向け想定の店舗管理機能(本社から管理？)
+# UIデザイン（ラフスケッチ）
+※初期構想のため追加実装と判断したものも含まれます。
+[![Image from Gyazo](https://i.gyazo.com/a79ecc1ad3c8d492aa7ab33689059ea7.png)](https://gyazo.com/a79ecc1ad3c8d492aa7ab33689059ea7)
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/05fa2b6e2ad8e18180433b88d333370a.png)](https://gyazo.com/05fa2b6e2ad8e18180433b88d333370a)
 # DB設計
+[![Image from Gyazo](https://i.gyazo.com/57ce832738d0c28bd81277a6ec3fdef5.png)](https://gyazo.com/57ce832738d0c28bd81277a6ec3fdef5)
+
 ## stores
 
 | Column           | Type    | Options     |
@@ -88,3 +131,25 @@ Try On
 
 ### Association
 - belongs_to : store
+# 開発環境
+### フロントエンド
+- HTML, CSS, JavaScript
+- 非同期通信を活用
+- Google Maps APIを利用した地図機能の統合
+### バックエンド
+- Ruby, Ruby on Rails 7.0.8.1
+- 非同期通信を活用
+- Google Maps APIとの連携
+### データベース
+- MySQL 5.7.44（開発環境）
+- PostgreSQL（本番環境）
+### データベース管理
+- TablePlus
+### ソース管理
+- GitHub, GitHub Desktop
+### デプロイ/運用
+- Renderを使用したデプロイメント
+
+# 受入テスト資料
+[![Image from Gyazo](https://i.gyazo.com/5b1af082804897b9810fddae055354fb.png)](https://gyazo.com/5b1af082804897b9810fddae055354fb)
+
