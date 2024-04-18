@@ -6,6 +6,7 @@
             <div class="list-title">サイズ</div>
             <div class="list-title">価格</div>
             <div class="list-title">在庫数</div>
+            <div class="list-title">取り扱い店舗</div>
             <div class="list-title">編集 / 削除</div>
           </div>
 
@@ -19,6 +20,7 @@
               <div class="item"><%= item.size.name %></div>
               <div class="item"><%= item.price %></div>
               <div class="item"><%= item.number_of_inventory %></div>
+              <div class="item"><%= item.store.store_name %></div>
               <div class="action-btn">
                 <div><%= link_to '編集', edit_store_item_path(store_id: item.store_id, id: item.id), class: "edit" %></div>
                 <div><%= link_to '削除', store_item_path(store_id: item.store_id, id: item.id), data: { turbo_method: :delete },  class:"delete" %></div>
