@@ -5,9 +5,13 @@
   <!-- 検索フォーム -->
   <div class="search-form">
     <%= search_form_for @q, url: search_path, html: {id: "detailed-search-form"} do |f| %>
-      <%= f.search_field :item_name_cont, placeholder: '商品名を入力して下さい', class: "search-field", id: "search-field-value"%>
+      <%= f.search_field :item_name_cont, placeholder: '商品名を正しく入力して下さい', class: "search-field", id: "search-field-value"%>
       <%= f.submit '検索', class: "search-btn", id: "search-submit"%>
     <% end %>
+  </div>
+  <div class="warning-message">
+    ※入力した商品名に間違いがある場合、誤った情報が表示される可能性がございます。<br>
+    ※店舗状況により試着できない場合がございます。
   </div>
   <!-- Googleマップ表示エリア(地図を表示) -->
   <div id="map" style="height: 600px"></div>
