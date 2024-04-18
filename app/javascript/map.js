@@ -7,6 +7,7 @@ function initMap() {
   });
 }
 
+// Search
 function search() {
   initMap();
   const formData = new FormData(document.getElementById("detailed-search-form"));
@@ -23,12 +24,29 @@ function search() {
   //if sent data successfully, call below.
   XHR.onload = () => {
     const markerData = XHR.response.markers;
-    console.log(markerData)
     // Add marker
     markerData.forEach(data => {
-      new google.maps.Marker({
+      const marker = new google.maps.Marker({
         position: { lat: data.lat, lng: data.lng },
         map: map
+      });
+      const contentStore = `
+      <div>
+        <div>店舗名：${data.store_name}</div>
+        <div>住所：${data.address}</div>
+        <div>営業時間：${data.opening_hours}</div>
+        <div>店舗説明：${data.description}</div>
+      </div>
+      `;
+
+      //Create infoWindow
+      const infoWindow = new google.maps.InfoWindow({
+        // Set contentStore as infoWindow
+        content: contentStore
+      });
+
+      google.maps.event.addListener(marker, 'click', () => {
+        infoWindow.open(map, marker);
       });
     });
   };

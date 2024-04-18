@@ -14,6 +14,10 @@ class TryonforclientController < ApplicationController
       {
         lat: store.latitude,
         lng: store.longitude,
+        store_name: store.store_name,
+        address: store.address,
+        description: store.description,
+        opening_hours: store.opening_hours
       }
     end
     render json:{ markers: markers }
