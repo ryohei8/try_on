@@ -30,12 +30,18 @@ function search() {
         position: { lat: data.lat, lng: data.lng },
         map: map
       });
+
+      const lat = data.lat;
+      const lng = data.lng;
+      const mapLink = `https://www.google.com/maps?q=${lat},${lng}`;
+      
       const contentStore = `
       <div>
         <div>店舗名：${data.store_name}</div>
         <div>住所：${data.address}</div>
         <div>営業時間：${data.opening_hours}</div>
         <div>店舗説明：${data.description}</div>
+        <div><a href="${mapLink}" target="_blank">Google マップで見る</a></div>
       </div>
       `;
 
