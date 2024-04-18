@@ -154,6 +154,8 @@ Try On
 - GitHub, GitHub Desktop
 ### デプロイ/運用
 - Renderを使用したデプロイメント
+### タスク管理
+- Miro
 
 # 受入テスト資料
 [![Image from Gyazo](https://i.gyazo.com/5b1af082804897b9810fddae055354fb.png)](https://gyazo.com/5b1af082804897b9810fddae055354fb)
