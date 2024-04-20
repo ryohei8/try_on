@@ -2,8 +2,8 @@
 Try On
 
 # アプリケーション概要
-- 欲しいと思っていた服の試着可能店舗を商品名から検索して地図上で確認できるアプリ（消費者側アプリ）
-- 在庫管理アプリ（販売側アプリ）
+- 欲しいと思っていた服の試着可能店舗を商品名から検索して地図上で確認できるアプリ（消費者側アプリ）：SP想定
+- 在庫管理アプリ（販売側アプリ）：PC想定
 
 # URL
 - 消費者側アプリ：https://try-on.onrender.com/tryonforclient/inde
@@ -87,10 +87,11 @@ Try On
 
 | Column              | Type       | Options                        |
 | ------------------- | ---------- | ------------------------------ |
+| category            | integer    | null: false                    |
 | item_name           | string     | null: false                    |
 | size_id             | integer    | null: false                    |
-| color               | integer    | null: false                    |
-| price               | integer    | null: false                    |
+| color               | string     | null: false                    |
+| price               |     | null: false                    |
 | number_of_inventory | integer    | null: false                    |
 | store               | references | null: false, foreign_key: true |
 
@@ -128,6 +129,7 @@ Try On
 - 検索機能
 - 管理者権限機能
 - エンタプライズ企業向け想定の店舗管理機能(本社から管理？)
+- レスポンシブ対応
 - csvインポート・エクスポート機能
 
 

@@ -17,31 +17,31 @@
         <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
           <div class="form-item">
             <div><%= f.label :姓, class: "form-title" %></div>
-            <%= f.text_field :last_name, class: "text-field" %>
+            <%= f.text_field :last_name, class: "field" %>
           </div>
           <div class="form-item">
             <div><%= f.label :名, class: "form-title" %></div>
-            <%= f.text_field :first_name, class: "text-field" %>
+            <%= f.text_field :first_name, class: "field" %>
           </div>
 
           <div class="form-item">
             <div><%= f.label :email, class: "form-title" %></div>
-            <%= f.email_field :email, class: "text-field" %>
+            <%= f.email_field :email, class: "field" %>
           </div>
 
           <div class="form-item">
             <div><%= f.label :password, class: "form-title" %></div>
-            <%= f.password_field :password, autocomplete: "off", placeholder: "6文字以上入力して下さい", class: "text-field" %>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "6文字以上入力して下さい", class: "field" %>
           </div>
 
           <div class="form-item">
             <div><%= f.label :パスワードを確認, class: "form-title" %></div>
-            <%= f.password_field :password_confirmation, autocomplete: "off", class: "text-field" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: "field" %>
           </div>
 
           <div class="form-item">
             <div><%= f.label :store_id, :所属店舗, class: "form-title" %></div>
-            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field", id: "store" } %>
+            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "field", id: "store" } %>
           </div>
 
           <div class="submit-btn">

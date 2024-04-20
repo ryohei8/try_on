@@ -1,6 +1,6 @@
 class Size < ActiveHash::Base
   self.data = [
-    { id: 1, name: '---' },
+    { id: 1, name: '選択してください' },
     { id: 2, name: 'S' },
     { id: 3, name: 'M' },
     { id: 4, name: 'L' },
