@@ -335,6 +335,15 @@ padding: 8px;
 margin-bottom: 24px;
 }
 
+.search-field::placeholder {
+  color: #90949C; 
+}
+
+.category-field {
+  width: 240px;
+  margin-right: 14px;
+}
+
 .search-btn {
   width: 72px;
   height: 42px;
@@ -376,5 +385,6 @@ margin-bottom: 24px;
   }
   .search-field {
     width: 70vw;
+    margin-right: 10px;
   }
 }
