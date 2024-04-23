@@ -5,6 +5,7 @@
   <!-- 検索フォーム -->
   <div class="search-form">
     <%= search_form_for @q, url: search_path, html: {id: "detailed-search-form"} do |f| %>
+      <%= f.select :category_eq, Item.categories.map{ |key, value| [t("enum.item.category.#{key}"), value]}, {include_blank: "カテゴリーを選択してください"}, class: "search-field", id: "search-field-value" %>
       <%= f.search_field :item_name_cont, placeholder: '商品名を正しく入力して下さい', class: "search-field", id: "search-field-value"%>
       <%= f.submit '検索', class: "search-btn", id: "search-submit"%>
     <% end %>
