@@ -14,26 +14,26 @@
         <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
           <div class="form-item">
             <div><%= f.label :姓, class: "form-title" %></div>
-            <%= f.text_field :last_name, class: "text-field" %>
+            <%= f.text_field :last_name, class: "field" %>
           </div>
           <div class="form-item">
             <div><%= f.label :名, class: "form-title" %></div>
-            <%= f.text_field :first_name, class: "text-field" %>
+            <%= f.text_field :first_name, class: "field" %>
           </div>
 
           <div class="form-item">
             <div><%= f.label :email, class: "form-title" %></div>
-            <%= f.email_field :email, class: "text-field" %>
+            <%= f.email_field :email, class: "field" %>
           </div>
 
           <div class="form-item">
             <div><%= f.label :store_id, :所属店舗, class: "form-title" %></div>
-            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field" } %>
+            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "field" } %>
           </div>
 
             <div class="form-item">
               <%= f.label :current_password, :現在のパスワード, class: "form-title" %>
-              <%= f.password_field :current_password, autocomplete: "current-password", class: "text-field" %>
+              <%= f.password_field :current_password, autocomplete: "current-password", class: "field" %>
             </div>
 
           <div class="submit-btn">

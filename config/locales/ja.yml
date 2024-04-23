@@ -21,6 +21,7 @@ ja:
         longitude: 経度
       item:
         store: 取り扱い店舗
+        category: カテゴリー
         item_name: 商品名
         color: カラー
         price: 価格

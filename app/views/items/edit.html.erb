@@ -20,38 +20,44 @@
         <div class="form-content">
           <div class="form-item">
             <div class="form-title">
+              カテゴリー
+            </div>
+            <%= f.select :category, Item.categories.keys.to_a, {include_blank: "選択してください"}, class: "field", id: "item-name" %>
+          </div>
+          <div class="form-item">
+            <div class="form-title">
               商品名
             </div>
-            <%= f.text_field :item_name, class: "text-field", id: "item-name" %>
+            <%= f.text_field :item_name, class: "field", id: "item-name" %>
           </div>
           <div class="form-item">
             <div class="form-title">
               カラー
             </div>
-            <%= f.text_field :color, class: "text-field", id: "color" %>
+            <%= f.text_field :color, class: "field", id: "color" %>
             </div>
           <div class="form-item">
             <div class="form-title">
               サイズ
             </div>
-            <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"item-size"}) %>
+            <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"field", id:"item-size"}) %>
           </div>
           <div class="form-item">
             <div class="form-title">
               価格
             </div>
-            <%= f.text_field :price, class: "text-field", id: "price" %>
+            <%= f.text_field :price, class: "field", id: "price" %>
           </div>
   
           <div class="form-item">
             <div class="form-title">
               在庫数
             </div>
-            <%= f.text_field :number_of_inventory, class: "text-field inventory", id: "inventory" %>
+            <%= f.text_field :number_of_inventory, class: "field inventory", id: "inventory" %>
           </div>
           <div class="form-item">
             <div><%= f.label :store_id, :所属店舗, class: "form-title" %></div>
-            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "text-field", id: "store" } %>
+            <%= f.select :store_id, Store.all.map { |store| [store.store_name, store.id] }, { include_blank: "選択してください" }, { class: "field", id: "store" } %>
           </div>
 
             <div class="submit-btn">

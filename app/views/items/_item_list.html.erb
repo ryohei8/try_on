@@ -1,6 +1,7 @@
         <%# inventory list %>
         <div class="inventory-list">
           <div class="list-header">
+            <div class="list-title">カテゴリー</div>
             <div class="list-title">商品名</div>
             <div class="list-title">カラー</div>
             <div class="list-title">サイズ</div>
@@ -15,6 +16,7 @@
           <% else %>
             <% items.each do |item| %>
             <div class="item-list">
+              <div class="item"><%= item.category %></div>
               <div class="item"><%= item.item_name %></div>
               <div class="item"><%= item.color %></div>
               <div class="item"><%= item.size.name %></div>
