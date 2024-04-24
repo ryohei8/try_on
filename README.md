@@ -6,7 +6,7 @@ Try On
 - 在庫管理アプリ（販売側アプリ）：PC想定
 
 # URL
-- 消費者側アプリ：https://try-on.onrender.com/tryonforclient/inde
+- 消費者側アプリ：https://try-on.onrender.com/tryonforclient/index
 - 販売側アプリ：https://try-on.onrender.com/
 
 # 在庫管理アプリテスト用アカウント
