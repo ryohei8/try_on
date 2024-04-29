@@ -7,7 +7,8 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    store_id = current_user.store_id
+    @item = Item.new(store_id: store_id)
   end
   
   def create
