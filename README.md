@@ -103,7 +103,7 @@ Try On
 # メイン機能についての画像や動画
 ### 販売者側
 - 在庫一覧（トップページ）
-[![Image from Gyazo](https://i.gyazo.com/bd998a4ffc953f6cc99d4919a3b1603e.png)](https://gyazo.com/bd998a4ffc953f6cc99d4919a3b1603e)
+[![Image from Gyazo](https://i.gyazo.com/e3410d09eff2d0b2a8b8180a254ba336.png)](https://gyazo.com/e3410d09eff2d0b2a8b8180a254ba336)
 - アカウント作成
 トップページ → アカウント作成押下 → 下記ページ
 [![Image from Gyazo](https://i.gyazo.com/77107f509d69389f99a6101a2d92d95b.gif)](https://gyazo.com/77107f509d69389f99a6101a2d92d95b)
@@ -112,9 +112,9 @@ Try On
 [![Image from Gyazo](https://i.gyazo.com/4fb9aef7d6d8e4b6b5aff5037c2d621e.gif)](https://gyazo.com/4fb9aef7d6d8e4b6b5aff5037c2d621e)
 - 商品登録
 トップページ → 商品を登録押下 → 下記ページ
-[![Image from Gyazo](https://i.gyazo.com/c11c2423790e5b269d615d0e8e448b10.gif)](https://gyazo.com/c11c2423790e5b269d615d0e8e448b10)
+[![Image from Gyazo](https://i.gyazo.com/716c98635519efa00e4f95c41fe5d72a.gif)](https://gyazo.com/716c98635519efa00e4f95c41fe5d72a)
 ### 試着可能店舗検索app
-[![Image from Gyazo](https://i.gyazo.com/393e8bf2c0d2dc265c6a03b51bcd7ff4.gif)](https://gyazo.com/393e8bf2c0d2dc265c6a03b51bcd7ff4)
+[![Image from Gyazo](https://i.gyazo.com/6987c3f1ee5d62d8749ce38cfe26356c.gif)](https://gyazo.com/6987c3f1ee5d62d8749ce38cfe26356c)
 
 # 追加実装検討中機能
 消費者側
