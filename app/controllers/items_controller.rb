@@ -35,6 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def search
+    @store = Store.all
     @q = Item.ransack(params[:q])
     @items = @q.result
   end
