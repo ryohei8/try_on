@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
 
   resources :stores, only: [:index, :new, :create, :edit, :update, :destroy] do
-    resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :items, only: [:index, :new, :create, :edit, :update, :destroy] do
+      collection do
+        get 'search'
+      end
+    end
   end
 end
