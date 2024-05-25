@@ -4,6 +4,9 @@ class ItemsController < ApplicationController
 
   def index
     @pagy, @items = pagy(Item.all.order("created_at DESC"), items: 20)
+    @q = Item.ransack(params[:q], auth_object: :inventory)
+    @items = @q.result(distinct: true)
+    Rails.logger.debug(@items.to_sql)
   end
 
   def new
@@ -32,12 +35,6 @@ class ItemsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-  end
-
-  def search
-    @store = Store.all
-    @q = Item.ransack(params[:q])
-    @items = @q.result
   end
 
   def destroy

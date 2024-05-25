@@ -35,6 +35,6 @@ class TryonforclientController < ApplicationController
   private
 
   def set_search_object
-    @q = Item.ransack(params[:q])
+    @q = Item.ransack(params[:q], auth_object: :consumer)
   end
 end
