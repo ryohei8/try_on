@@ -15,7 +15,7 @@ class Item < ApplicationRecord
     if auth_object == :consumer
       ["item_name", "category"]
     elsif auth_object == :inventory
-      ["item_name"]
+      ["item_name", "category"]
     else
       super
     end

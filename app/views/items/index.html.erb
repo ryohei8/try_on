@@ -19,6 +19,7 @@
           <%= search_form_for @q, url: items_path, method: :get do |f| %>
             <div>
               <%= f.search_field :item_name_cont, class: "search-field", placeholder: '商品名で検索'%>
+              <%= f.collection_select(:category_eq, Item.categories.keys.map { |k| [k, Item.categories[k]] }, :last, :first, { include_blank: 'カテゴリーを選択' }, { class: "search-field category-field" } )%>
               <%= f.submit "検索", class: "search-btn" %>
             </div>
           <% end %>

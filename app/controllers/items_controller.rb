@@ -6,7 +6,6 @@ class ItemsController < ApplicationController
     @pagy, @items = pagy(Item.all.order("created_at DESC"), items: 20)
     @q = Item.ransack(params[:q], auth_object: :inventory)
     @items = @q.result(distinct: true)
-    Rails.logger.debug(@items.to_sql)
   end
 
   def new
