@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :stores, only: [:index, :new, :create, :edit, :update, :destroy] do
     resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
   end
+  # ひとまず全体の検索ができるか検討するため冗長を許容
+  resources :items, only: [:index]
 end

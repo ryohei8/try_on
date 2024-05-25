@@ -12,7 +12,13 @@ class Item < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["item_name", "category"]
+    if auth_object == :consumer
+      ["item_name", "category"]
+    elsif auth_object == :inventory
+      ["item_name"]
+    else
+      super
+    end
   end
 end
 
