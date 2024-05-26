@@ -3,9 +3,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index] 
 
   def index
-    @pagy, @items = pagy(Item.all.order("created_at DESC"), items: 20)
     @q = Item.ransack(params[:q], auth_object: :inventory)
-    @items = @q.result(distinct: true)
+    @pagy, @items = pagy(@q.result(distinct: true).order("created_at DESC"), items: 20)
   end
 
   def new
