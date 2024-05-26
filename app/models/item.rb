@@ -15,10 +15,14 @@ class Item < ApplicationRecord
     if auth_object == :consumer
       ["item_name", "category"]
     elsif auth_object == :inventory
-      ["item_name", "category", "number_of_inventory"]
+      ["item_name", "category", "number_of_inventory", "store_id"]
     else
       super
     end
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["store"]
   end
 end
 

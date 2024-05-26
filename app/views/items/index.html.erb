@@ -33,6 +33,10 @@
                 <%= f.number_field :number_of_inventory_gteq, class: "search-field-inventory", placeholder: '最小' %> 〜 
                 <%= f.number_field :number_of_inventory_lteq, class: "search-field-inventory", placeholder: '最大' %>
               </div>
+              <div class="search-inventory-item">
+                <div><%= f.label :store_id_eq, '取り扱い店舗' %></div>
+                <div><%= f.collection_select(:store_id_eq, Store.all.pluck(:store_name, :id), :last, :first, { include_blank: '取り扱い店舗を選択' }, { class: "search-field-inventory" } )%></div>
+              </div>
               <div>
                 <%= f.submit "検索", class: "search-btn" %>
                 <%= link_to "検索をクリア", items_path, class: "search-cancel-btn" %>
