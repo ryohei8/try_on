@@ -326,7 +326,7 @@ input[type="password"]::placeholder {
 .search-field-inventory {
   background-color: #fff;
   height: 36px;
-  width: 200px;
+  width: 180px;
   box-shadow: 0px 5px 16px -10px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   border: solid 1px #d3d3d3;
