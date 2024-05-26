@@ -338,6 +338,12 @@ input[type="password"]::placeholder {
   text-align: right;
 }
 
+.search-cancel-btn {
+  color: #616771;
+  font-size: 12px;
+  margin-left: 14px;
+}
+
 .search-inventory-message {
   font-size: 12px;
   color: #90949C;
