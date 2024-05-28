@@ -17,8 +17,8 @@
       <% if search_fields.include?(:number_of_inventory) %>
         <div class="search-inventory-item">
           <div><%= f.label :number_of_inventory_gteq, "在庫数" %></div>
-          <%= f.number_field :number_of_inventory_gteq, class: "search-field-inventory", placeholder: '最小' %> 〜 
-          <%= f.number_field :number_of_inventory_lteq, class: "search-field-inventory", placeholder: '最大' %>
+          <%= f.number_field :number_of_inventory_gteq, class: "search-field-inventory", placeholder: '以上' %> 〜 
+          <%= f.number_field :number_of_inventory_lteq, class: "search-field-inventory", placeholder: '以下' %>
         </div>
       <% end %>
       <% if search_fields.include?(:store) %>
