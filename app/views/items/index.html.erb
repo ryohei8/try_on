@@ -15,36 +15,12 @@
       <%# main header %>
 
       <%# To search items %>
-        <div class="search">
-          <div class="search-title">在庫検索</div>
-          <%= search_form_for @q, url: items_path, method: :get do |f| %>
-            <div class="search-inventory-wrapper">
-              <div class="search-inventory-item">
-                <div><%= f.label :item_name_cont, '商品名' %></div>
-                <div><%= f.search_field :item_name_cont, placeholder: '商品名で検索', class: "search-field-inventory" %></div>
-              </div>
-              <div class="search-inventory-item">
-                <div><%= f.label :category_eq, 'カテゴリー' %></div>
-                <div><%= f.collection_select(:category_eq, Item.categories.keys.map { |k| [k, Item.categories[k]] }, :last, :first, { include_blank: 'カテゴリーを選択' }, { class: "search-field-inventory" } )%></div>
-              </div>
-
-              <div class="search-inventory-item">
-                <div><%= f.label :number_of_inventory_gteq, "在庫数" %></div>
-                <%= f.number_field :number_of_inventory_gteq, class: "search-field-inventory", placeholder: '最小' %> 〜 
-                <%= f.number_field :number_of_inventory_lteq, class: "search-field-inventory", placeholder: '最大' %>
-              </div>
-              <div class="search-inventory-item">
-                <div><%= f.label :store_id_eq, '取り扱い店舗' %></div>
-                <div><%= f.collection_select(:store_id_eq, Store.all.pluck(:store_name, :id), :last, :first, { include_blank: '取り扱い店舗を選択' }, { class: "search-field-inventory" } )%></div>
-              </div>
-              <div>
-                <%= f.submit "検索", class: "search-btn" %>
-                <%= link_to "検索をクリア", items_path, class: "search-cancel-btn" %>
-              </div>
-            </div>
-          <% end %>
-          <div class="search-inventory-message">検索を組み合わせることも別々で検索することも可能です。</div>
-        </div>
+      <%= render partial: 'shared/search_form', locals: { 
+        title: '在庫検索', 
+        search_object: @q, 
+        search_path: items_path, 
+        search_fields: [:item_name, :category, :number_of_inventory, :store] 
+      } %>
 
       <%# item list %>
       <div class="list-wrapper">
