@@ -1,0 +1,37 @@
+<div class="search">
+  <div class="search-title"><%= title %></div>
+  <%= search_form_for search_object, url: search_path, method: :get do |f| %>
+    <div class="search-inventory-wrapper">
+      <% if search_fields.include?(:item_name) %>
+        <div class="search-inventory-item">
+          <div><%= f.label :item_name_cont, '商品名' %></div>
+          <div><%= f.search_field :item_name_cont, placeholder: '商品名で検索', class: "search-field-inventory" %></div>
+        </div>
+      <% end %>
+      <% if search_fields.include?(:category) %>
+        <div class="search-inventory-item">
+          <div><%= f.label :category_eq, 'カテゴリー' %></div>
+          <div><%= f.collection_select(:category_eq, Item.categories.keys.map { |k| [k, Item.categories[k]] }, :last, :first, { include_blank: 'カテゴリーを選択' }, { class: "search-field-inventory" }) %></div>
+        </div>
+      <% end %>
+      <% if search_fields.include?(:number_of_inventory) %>
+        <div class="search-inventory-item">
+          <div><%= f.label :number_of_inventory_gteq, "在庫数" %></div>
+          <%= f.number_field :number_of_inventory_gteq, class: "search-field-inventory", placeholder: '最小' %> 〜 
+          <%= f.number_field :number_of_inventory_lteq, class: "search-field-inventory", placeholder: '最大' %>
+        </div>
+      <% end %>
+      <% if search_fields.include?(:store) %>
+        <div class="search-inventory-item">
+          <div><%= f.label :store_id_eq, '取り扱い店舗' %></div>
+          <div><%= f.collection_select(:store_id_eq, Store.all.pluck(:store_name, :id), :last, :first, { include_blank: '取り扱い店舗を選択' }, { class: "search-field-inventory" }) %></div>
+        </div>
+      <% end %>
+      <div>
+        <%= f.submit "検索", class: "search-btn" %>
+        <%= link_to "検索をクリア", search_path, class: "search-cancel-btn" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="search-inventory-message">検索を組み合わせることも別々で検索することも可能です。</div>
+</div>
