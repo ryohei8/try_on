@@ -113,8 +113,13 @@ Try On
 - 商品登録
 トップページ → 商品を登録押下 → 下記ページ
 [![Image from Gyazo](https://i.gyazo.com/716c98635519efa00e4f95c41fe5d72a.gif)](https://gyazo.com/716c98635519efa00e4f95c41fe5d72a)
+- 在庫検索機能
+[![Image from Gyazo](https://i.gyazo.com/b253b934e7d7ea5a9d9d186546d9d134.gif)](https://gyazo.com/b253b934e7d7ea5a9d9d186546d9d134)
 ### 試着可能店舗検索app
 [![Image from Gyazo](https://i.gyazo.com/6987c3f1ee5d62d8749ce38cfe26356c.gif)](https://gyazo.com/6987c3f1ee5d62d8749ce38cfe26356c)
+
+- Google Mapに遷移し、経路検索できるように追加実装
+[![Image from Gyazo](https://i.gyazo.com/20f50f86b8471a139096002970bf5a5f.gif)](https://gyazo.com/20f50f86b8471a139096002970bf5a5f)
 
 # 追加実装検討中機能
 消費者側
