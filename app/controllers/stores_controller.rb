@@ -3,8 +3,8 @@ class StoresController < ApplicationController
   before_action :authenticate_user!, except: [:index] 
 
   def index
-    @pagy, @stores = pagy(Store.all.order("created_at DESC"), items: 20)
-
+    @q = Store.ransack(params[:q])
+    @pagy, @stores = pagy(@q.result(distinct: true).order("created_at DESC"), items: 20)
   end
   
   def new

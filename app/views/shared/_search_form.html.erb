@@ -27,6 +27,18 @@
           <div><%= f.collection_select(:store_id_eq, Store.all.pluck(:store_name, :id), :last, :first, { include_blank: '取り扱い店舗を選択' }, { class: "search-field-inventory" }) %></div>
         </div>
       <% end %>
+      <% if search_fields.include?(:store_name) %>
+        <div class="search-inventory-item">
+          <div><%= f.label :store_name_cont, '店舗名' %></div>
+          <div><%= f.search_field :store_name_cont, placeholder: '店舗名で検索', class: "search-field-inventory" %></div>
+        </div>
+      <% end %>
+      <% if search_fields.include?(:address) %>
+        <div class="search-inventory-item">
+          <div><%= f.label :address_cont, '住所' %></div>
+          <div><%= f.search_field :address_cont, placeholder: '住所で検索', class: "search-field-inventory" %></div>
+        </div>
+      <% end %>
       <div>
         <%= f.submit "検索", class: "search-btn" %>
         <%= link_to "検索をクリア", search_path, class: "search-cancel-btn" %>

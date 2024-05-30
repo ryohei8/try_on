@@ -11,7 +11,7 @@ class Store < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["store_name"]
+    ["store_name", "address"]
   end
   def self.ransackable_associations(auth_object = nil)
     ["items"]
