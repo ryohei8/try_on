@@ -13,7 +13,12 @@
         <%# To add item %>
       </div>
       <%# main header %>
-
+      <%= render partial: 'shared/search_form', locals: { 
+        title: '店舗検索', 
+        search_object: @q, 
+        search_path: stores_path, 
+        search_fields: [:store_name, :address] 
+      } %>
       <%# store list %>
       <div class="list-wrapper">
       <div class="inventory-list">
